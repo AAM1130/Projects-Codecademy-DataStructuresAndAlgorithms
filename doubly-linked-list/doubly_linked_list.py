@@ -38,7 +38,6 @@ class Node:
 
 # Doubly linked list class
 class DoublyLinkedList:
-    # class is initialized with empty head and tail nodes.
 
     def __init__(self)-> None:
         self.head_node: Node | None = None
@@ -107,7 +106,7 @@ class DoublyLinkedList:
         return removed_tail.get_value()
 
     # method to remove by Node value
-    def remove_by_value(self, value_to_remove: int)-> Node | None:
+    def remove_by_value(self, value_to_remove: int)-> int | None:
         node_to_remove = None
         current_node = self.head_node
 
@@ -131,7 +130,7 @@ class DoublyLinkedList:
             next_node.set_prev_node(prev_node)
             prev_node.set_next_node(next_node)
 
-        return node_to_remove
+        return node_to_remove.get_value()
 
     # method to return the current linked list as string.
     def stringify_list(self)-> str | None:
