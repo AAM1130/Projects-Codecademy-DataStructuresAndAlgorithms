@@ -39,12 +39,10 @@ class Node:
 # Doubly linked list class
 class DoublyLinkedList:
     # class is initialized with empty head and tail nodes.
-    head_node: Node | None
-    tail_node: Node | None
 
     def __init__(self)-> None:
-        self.head_node = None
-        self.tail_node = None
+        self.head_node: Node | None = None
+        self.tail_node: Node | None = None
 
     # method to add a new node to the head position.
     def add_to_head(self, new_value: int) -> None:
@@ -87,7 +85,7 @@ class DoublyLinkedList:
             self.head_node.set_prev_node(None)
 
         if removed_head == self.tail_node:
-            self.remove_tail()
+            self.tail_node = None
 
         return removed_head.get_value()
 
@@ -104,7 +102,7 @@ class DoublyLinkedList:
             self.tail_node.set_next_node(None)
 
         if removed_tail == self.head_node:
-            self.remove_head()
+            self.head_node = None
 
         return removed_tail.get_value()
 
@@ -142,9 +140,7 @@ class DoublyLinkedList:
 
         while current_node:
 
-            if current_node.get_next_node() is not None:
-                string_list += str(current_node.get_value()) + "\n"
-
+            string_list += str(current_node.get_value()) + "\n"
             current_node = current_node.get_next_node()
 
         return string_list
