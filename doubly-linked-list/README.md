@@ -30,10 +30,6 @@ of what's happening 'under the hood' of your chosen programming language.
 
 [SituationUnknown](https://github.com/AAM1130)
 
-## Version History
-
-* 0.1
-    * Initial Release
 
 ## Acknowledgments
 
